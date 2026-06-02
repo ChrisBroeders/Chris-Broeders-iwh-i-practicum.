@@ -5,11 +5,11 @@ require('dotenv').config();
 const app = express();
 const PORT = 3000;
 
-// Your custom object's internal name from HubSpot (e.g. "books", "pets")
-const CUSTOM_OBJECT_TYPE = '2-XXXXXXX'; // Replace with your custom object ID
 
-// The three custom property names you created in HubSpot
-const CUSTOM_PROPS = ['name', 'author', 'genre']; // Replace with yours
+const CUSTOM_OBJECT_TYPE = '2-63519306'; 
+
+
+const CUSTOM_PROPS = ['name', 'location', 'type'];
 
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -52,8 +52,8 @@ app.post('/update-cobj', async (req, res) => {
     const newRecord = {
         properties: {
             name: req.body.name,
-            author: req.body.author,   // Replace with your actual property names
-            genre: req.body.genre      // Replace with your actual property names
+            author: req.body.location, 
+            genre: req.body.type      
         }
     };
     try {
