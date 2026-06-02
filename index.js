@@ -1,3 +1,4 @@
+
 const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
@@ -29,7 +30,7 @@ app.get('/', async (req, res) => {
         const resp = await axios.get(url, { headers });
         const records = resp.data.results;
         res.render('homepage', {
-            title: 'Custom Objects | Integrating With HubSpot I Practicum',
+            title: 'Apartments | Integrating With HubSpot I Practicum',
             records,
             props: CUSTOM_PROPS
         });
